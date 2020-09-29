@@ -1,6 +1,19 @@
-input.onGesture(Gesture.Shake, function () {
-    roll = randint(0, 10)
-    basic.showNumber(roll)
+input.onButtonPressed(Button.A, function () {
+    basic.showLeds(`
+        # # # # #
+        # . # . #
+        # # # # #
+        # . . . #
+        # # # # #
+        `)
 })
-let roll = 0
-basic.showString("Shake to roll the dice")
+input.onGesture(Gesture.TiltLeft, function () {
+    Random = randint(0, 10)
+    basic.showNumber(Random)
+})
+input.onGesture(Gesture.TiltRight, function () {
+    Random = randint(0, 100)
+    basic.showNumber(Random)
+})
+let Random = 0
+basic.showString("Hi there buddy")
